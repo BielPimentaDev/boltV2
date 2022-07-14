@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
+import { View, Text, StyleSheet, Image, StatusBar } from 'react-native'
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 import { Entypo } from '@expo/vector-icons'; 
@@ -16,7 +16,8 @@ const socialMedias =[
 export default function Index() {
   return (
     <View style={styles.container}>
-        <Image source={require('../../assets/imgs/logo2.png')}/>
+        <StatusBar/>
+        <Image source={require('../../assets/imgs/logo2.png')} />
 
         <Text style={styles.title}>Congratulations</Text>
         <Text style={styles.subtitle}>YOU JUST DONE YOUR RACE AND  EARNED</Text>
@@ -29,7 +30,7 @@ export default function Index() {
             <Text style={styles.textPoints}>DRIVE POINTS</Text>
 
         </View>
-        <Image source={require('../../assets/imgs/congratulations_image.png')} style={{height: '40%'}}/>
+        <Image source={require('../../assets/imgs/congratulations_image.png')} style={{height: '35%'}}/>
 
         <View style={{justifyContent:'flex-start'}}>
             <Text style={styles.contrastText}>Share this is</Text>
@@ -43,7 +44,7 @@ export default function Index() {
                         <View  style={styles.socialCircle}>
                             {Object.values(item)[0][0]}
                             </View>
-                                        <Text style={{fontFamily: 'mont', color: Object.values(item)[0][1], fontSize:12}}  key={Object.keys(item)}>
+                                        <Text style={{fontFamily: 'mont', color: Object.values(item)[0][1], fontSize:8}}  key={Object.keys(item)}>
                         {Object.keys(item)[0]}
                                         </Text>
                     </View>
@@ -61,18 +62,20 @@ const styles = StyleSheet.create({
         width:'100%',
         alignItems:'center',
         alignContent:'center',
+        padding: 10
+      
        
     },
     title:{
         color: 'white',
         fontFamily: 'montBoldItalic',
-        fontSize:36
+        fontSize:30
     },
     subtitle:{
         color: 'white',
         fontFamily: 'mont',
         fontSize:12,
-        marginVertical:5,
+        marginVertical:10,
         
     },
     biggerNumber:{
@@ -92,9 +95,10 @@ const styles = StyleSheet.create({
         color: '#02FFE3',
         fontFamily:'montBold'
     },
-    socialContainer:{flexDirection: 'row', justifyContent:'space-around'},
+    socialContainer:{flexDirection: 'row', justifyContent:'space-around', alignItems:'center'},
     socialMediaView:{
-        marginHorizontal:10
+        marginHorizontal:10,
+      
     },
     socialCircle:{
         backgroundColor: '#05292F',

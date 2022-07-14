@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { Txt, TxtBg, TxtLght } from '../../common/styles/styles'
 
-let barList = []
+let barList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 const status = [
     {
         number: '150',
@@ -22,9 +22,7 @@ const status = [
 ]
 
 export default function Status() {
-    {for (let i= 0; i<24; i++){
-        barList.push(i+1)
-        }}
+ 
     
   return (
     <View style={styles.container}>
@@ -50,8 +48,8 @@ export default function Status() {
             {status.map(item =>{
                 return(
                     <>
-                    <View key={item.text} style={{justifyContent: 'center', alignItems: 'center'}}>
-                        <View style={{flexDirection: 'row', alignItems:'flex-end', margin: 5}}>
+                    <View key={item.number} style={{justifyContent: 'center', alignItems: 'center'}}>
+                        <View  key={item.number} style={{flexDirection: 'row', alignItems:'flex-end', margin: 5}}>
                             <TxtBg>{item.number}</TxtBg>
                             {item.type === 'text' ? <Txt style={{marginHorizontal:5}}>km</Txt> : <Txt style={{marginHorizontal:5}}>$</Txt>}
                         </View>

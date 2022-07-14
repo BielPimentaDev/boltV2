@@ -25,8 +25,6 @@ export default function Speedometer() {
 }
 const styles = StyleSheet.create({
     box:{
-    
-       
         width: 200,
         height:100,
         // backgroundColor:'red',
@@ -36,6 +34,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignContent: 'center',
         overflow: 'hidden'
+        
     },
     kmNumber:{
       marginTop:'auto',

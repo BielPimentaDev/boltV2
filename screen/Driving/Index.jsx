@@ -6,6 +6,7 @@ import Speedometer from './Speedometer'
 import BatteryCount from './BatteryCount'
 import Status from './Status'
 import SliderButton from './SliderButton'
+import Map from './Map'
 
 export default function Driving() {
 return (
@@ -13,12 +14,12 @@ return (
     <Image source={require('../../assets/imgs/logo2.png')}/>
     <Image source={require('../../assets/imgs/map.png')} style={{height:'20%', marginVertical:20}}/>
     <View style={styles.box}>
-    <Speedometer/>
+    {/* <Speedometer/> */}
     <BatteryCount/>
     <Status/>
     <SliderButton/>
     </View>
-    
+    <Map/>
   </View>
 )
 
@@ -31,6 +32,8 @@ const styles = StyleSheet.create({
     paddingTop:20,
     alignContent:'center',
     alignItems:'center',
+   
+    
   },
   
   box:{

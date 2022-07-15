@@ -4,11 +4,14 @@ import React from 'react'
 import { StyleSheet , ImageBackground} from 'react-native';
 import { TextInput } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
+import { StatusBar } from 'react-native-web';
+import {LinearGradient} from 'expo-linear-gradient'
 
 export default function Login() {
   return (
     <View style={styles.container}> 
-      <ImageBackground style={{flex:1, alignItems:"center", padding: 10}} source={require('../../assets/imgs/fundo.png')}>
+    <StatusBar/>
+      <ImageBackground style={{flex:1, alignItems:"center"}} source={require('../../assets/imgs/fundo.png')}>
 
 
       <Image style={styles.logo} source={require('../../assets/imgs/logo_sem_fundo.png')}/>
@@ -32,7 +35,8 @@ export default function Login() {
       </Pressable>
       
       </View>
-      
+     
+    
      
       </ImageBackground>
     </View>
@@ -46,8 +50,9 @@ const styles = StyleSheet.create({
     
   },
 	logo: {
-    width:250,
-    height:250,
+    width:200,
+    height:200,
+   
   },
   textInput: {
     height:50,
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     paddingHorizontal: 15,
-    marginVertical: 20
+    marginVertical: 10
   },
   inputContainer:{
  
@@ -75,7 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent:'center',
     alignItems:'center',
-    marginTop: 50,
+    marginTop: 30,
   },
 
   text:{
@@ -92,6 +97,8 @@ const styles = StyleSheet.create({
   checkbox:{
     borderRadius:0
   }
+  ,
+
 
 
  

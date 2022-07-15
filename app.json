@@ -1,5 +1,5 @@
 {
-  "expo": {
+  "expo": {"userInterfaceStyle": "automatic",
     "name": "boltV2",
     "slug": "boltV2",
     "version": "1.0.0",

@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Login from './screen/Login';
 import { StyleSheet, Text, View } from 'react-native';
 import Main from './screen/Main/Index';
 import { useFonts } from 'expo-font';
+import { Entypo } from '@expo/vector-icons';
 import Routes from './Routes';
 import Driving from './screen/Driving/Index';
 import Congratulation from './screen/Congratulation/Index';
@@ -29,7 +31,7 @@ export default function App() {
 			<Tab.Navigator
 				screenOptions={{
 					headerShown: false,
-
+					tabBarShowLabel: false,
 					tabBarActiveTintColor: '#fff',
 					tabBarStyle: {
 						backgroundColor: '#04E3C3',
@@ -39,17 +41,15 @@ export default function App() {
 					name='Congratulation'
 					component={Congratulation}
 					options={{
-						topBarIcon: () => (
-							<FontAwesome name='home' size={24} color='black' />
-						),
+						tabBarIcon: () => <Entypo name='home' size={24} color='black' />,
 					}}
 				/>
 				<Tab.Screen
 					name='Login'
 					component={Login}
 					options={{
-						topBarIcon: () => (
-							<FontAwesome name='home' size={24} color='black' />
+						tabBarIcon: () => (
+							<Ionicons name='car-sport-sharp' size={24} color='black' />
 						),
 					}}
 				/>
@@ -58,8 +58,8 @@ export default function App() {
 					name='Main'
 					component={Main}
 					options={{
-						topBarIcon: () => (
-							<FontAwesome name='home' size={24} color='black' />
+						tabBarIcon: () => (
+							<Ionicons name='md-grid-outline' size={24} color='black' />
 						),
 					}}
 				/>
@@ -67,8 +67,8 @@ export default function App() {
 					name='Driving'
 					component={Driving}
 					options={{
-						topBarIcon: () => (
-							<FontAwesome name='home' size={24} color='black' />
+						tabBarIcon: () => (
+							<Ionicons name='person' size={24} color='black' />
 						),
 					}}
 				/>

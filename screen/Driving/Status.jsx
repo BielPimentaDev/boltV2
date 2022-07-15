@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native'
+import {LinearGradient} from 'expo-linear-gradient'
 import React from 'react'
 import { Txt, TxtBg, TxtLght } from '../../common/styles/styles'
 
@@ -25,21 +26,21 @@ export default function Status() {
  
     
   return (
-    <View style={styles.container}>
-       
+    <View >
+      <LinearGradient style={styles.container}  colors={['#16ac9a', '#02352F']} end={{x:0.9, y:0.1}}>
       <Txt>Status</Txt>
       
       <View>
         <View style={styles.barListContainer}>
             {barList.map(number=>{
                if (number >= 20){
-                
+                   
                    return <View key={number } style={styles.barDisable}/>
                 }
                 else{
                     
                     return <View key={number } style={styles.bar}/>
-               }
+                }
             })}
               
             
@@ -64,6 +65,7 @@ export default function Status() {
       </View>
 
      
+        </LinearGradient> 
     </View>
   )
 }
@@ -91,15 +93,19 @@ const styles = StyleSheet.create({
         width:5,
         height:40,
         backgroundColor: '#02FFE3',
-        margin: 2,
+        
+        marginHorizontal:4,
+        marginTop:10
+       
         
     },
     barDisable:{
         width:5,
         height:40,
         backgroundColor: '#02FFE3',
-        margin: 2,
-        opacity: 0.5
+        marginHorizontal:4,
+        opacity: 0.5,
+        marginTop:10
     },
     statusContainer:{
         width: '100%',

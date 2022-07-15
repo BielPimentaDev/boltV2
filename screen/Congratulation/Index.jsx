@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
    
     },
     socialTxt:{
-        font: 'mont',
+        fontFamily: 'mont',
         fontSize: 14
     },
     contrastText:{

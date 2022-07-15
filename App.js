@@ -11,6 +11,9 @@ import { useFonts } from 'expo-font';
 import { Entypo } from '@expo/vector-icons';
 import Routes from './Routes';
 import Driving from './screen/Driving/Index';
+import Wallet from './screen/Wallet/Index';
+import Marketplace from './screen/Marketplace/Index';
+
 import Congratulation from './screen/Congratulation/Index';
 
 const Tab = createBottomTabNavigator();
@@ -37,6 +40,24 @@ export default function App() {
 						backgroundColor: '#04E3C3',
 					},
 				}}>
+				<Tab.Screen
+					name='Marketplace'
+					component={Marketplace}
+					options={{
+						tabBarIcon: () => (
+							<Ionicons name='car-sport-sharp' size={24} color='black' />
+						),
+					}}
+				/>
+				<Tab.Screen
+					name='Wallet'
+					component={Wallet}
+					options={{
+						tabBarIcon: () => (
+							<Ionicons name='car-sport-sharp' size={24} color='black' />
+						),
+					}}
+				/>
 				<Tab.Screen
 					name='Congratulation'
 					component={Congratulation}

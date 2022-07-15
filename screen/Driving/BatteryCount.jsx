@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     square:{
         width: '25%',
         height: 10,
-        borderRadius:4,
+        
         backgroundColor: '#02FFE3',
         margin:15,
         shadowColor: '#02FFE3',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     squareLess:{
         width: '25%',
         height: 10,
-        borderRadius:4,
+        
         backgroundColor: '#02FFE3',
         margin:15,
         

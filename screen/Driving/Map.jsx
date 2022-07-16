@@ -26,6 +26,8 @@ export default function App() {
   const [balance, setBalance] = React.useState(0);
   const [initialPosition, setInitialPosition] = React.useState(null);
   const [battery, setBattery] = React.useState(signature[userSignature].battery);
+  const [totalBalance, setTotalBalance] = React.useState(0);
+  const [totalBattery, setTotalBattery] = React.useState(signature[userSignature].battery);
 
   React.useEffect(() => {
     if (initialPosition) {
@@ -35,7 +37,7 @@ export default function App() {
         0.01
       );
       const kilometers = meters / 1000;
-      setBalance(kilometers * signature[userSignature]);
+      setBalance(kilometers * signature[userSignature].reward);
       setBattery(signature[userSignature].battery - kilometers);
     }
     /* Jhony, fiz os calculos aqui... sei q nao tao perfeitos mas é so um esboço pq n gosot de front e
@@ -43,9 +45,7 @@ export default function App() {
     Vc é inteligente vai entender o q eu fiz... Basicamente o getPreciseDistance dá a diferenca de distancia da posicao
     inicial pra posiçao q esta sendo medida agora EM METROS, transforma pra KILOMETROS e ai multiplica pelo valor do bonus
     que o cara tem de acordo com o plano que assinou e desconta essa kilometragem da bateria do carro
-    console.log(battery);
-    console.log(balance);
-    */
+   */
   }, [position]);
 
   async function VerifyPermissions() {
@@ -80,6 +80,8 @@ export default function App() {
   };
 
   const stopTracking = async () => {
+    setTotalBalance(totalBalance + balance);
+    setTotalBattery(totalBattery - (totalBattery - battery));
     setSpeed(0);
     await watcher?.remove();
   };

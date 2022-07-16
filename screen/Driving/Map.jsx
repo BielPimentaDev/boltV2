@@ -40,12 +40,6 @@ export default function App() {
       setBalance(kilometers * signature[userSignature].reward);
       setBattery(signature[userSignature].battery - kilometers);
     }
-    /* Jhony, fiz os calculos aqui... sei q nao tao perfeitos mas é so um esboço pq n gosot de front e
-    esse bagulho de geolocalizacao e chato p crl...
-    Vc é inteligente vai entender o q eu fiz... Basicamente o getPreciseDistance dá a diferenca de distancia da posicao
-    inicial pra posiçao q esta sendo medida agora EM METROS, transforma pra KILOMETROS e ai multiplica pelo valor do bonus
-    que o cara tem de acordo com o plano que assinou e desconta essa kilometragem da bateria do carro
-   */
   }, [position]);
 
   async function VerifyPermissions() {
